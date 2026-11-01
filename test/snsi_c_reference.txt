@@ -1,0 +1,14 @@
+# P(mu->e), P(mu->mu) from the scalar-NSI + decoherence C engine (snsi_engine_ihfix.c of
+# SNSI-Decoherence-DUNE, with CODATA constants), L = 1300 km, rho = 2.848 g/cm^3.
+# Columns: config cp_sign E/GeV P_mue P_mumu; Gamma in GeV, equal for all pairs, n = 0.
+# config 2: NuFIT 6.1 NO, eta_emu = 0.05, delta_emu = 1.0, Gamma = 0 (the scalar-NSI rows of GLoBES.jl's test/reference)
+2 1 0.5 1.706070967005e-01 5.163697166930e-02
+2 1 1 3.682754807364e-02 3.797823071886e-01
+2 1 2.5 8.220720212912e-02 9.029627367635e-03
+2 1 5 2.836399549505e-02 4.812639800855e-01
+2 1 11 5.671491898784e-03 8.719573122822e-01
+2 -1 0.5 2.168432422586e-02 5.003693093225e-02
+2 -1 1 6.414318976950e-03 3.888386494525e-01
+2 -1 2.5 1.524120668874e-02 6.426307358510e-03
+2 -1 5 1.266682295406e-02 4.803368432814e-01
+2 -1 11 3.950810839925e-03 8.718495101694e-01

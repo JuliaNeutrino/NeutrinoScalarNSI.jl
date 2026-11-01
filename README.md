@@ -1,0 +1,22 @@
+# NeutrinoScalarNSI.jl
+
+Scalar non-standard neutrino interactions for [GLoBES.jl](https://github.com/JuliaNeutrino/GLoBES.jl). A light scalar coupled to neutrinos and matter corrects the neutrino mass matrix, M → M + δM, rather than adding a potential like vector NSI. The effect therefore depends on the absolute neutrino masses and grows with the density, not with the energy.
+
+```julia
+using Pkg
+Pkg.develop(path = "/path/to/NeutrinoScalarNSI.jl")   # not registered yet
+using GLoBES, NeutrinoScalarNSI
+```
+
+`ScalarNSI` is a GLoBES.jl propagation block, with parameters `η_αβ`, the phases `δ_αβ` and the lightest mass `m_lightest`. δM = √|Δm²31| η by default, the convention of Ge and Parke (arXiv:1812.08376).
+
+```julia
+model = NewPhysics(ScalarNSI(:eτ))       # or ScalarNSI(:ee, :eμ; scale = 0.05) for δM in units of 0.05 eV
+use_model!(model)                        # the probability engine of all experiments
+p = OscParams(model, nufit_params("6.1"); η_eτ = 0.1, m_lightest = 0.01)
+probability(p, :μ, :e; E = 2.5, L = 1300, ρ = 2.848)
+```
+
+It combines with the other blocks, e.g. `NewPhysics(ScalarNSI(:eτ), Decoherence())` with [NeutrinoDecoherence.jl](https://github.com/JuliaNeutrino/NeutrinoDecoherence.jl). Rates, χ² and fits in GLoBES.jl then use the new parameters like the standard ones.
+
+The probabilities agree with the C engine of the SNSI-decoherence DUNE study to 10⁻¹⁰ (`test/snsi_c_reference.txt`). Tests: `julia --project=. test/runtests.jl`.
