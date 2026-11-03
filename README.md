@@ -4,7 +4,7 @@ Scalar non-standard neutrino interactions for [GLoBES.jl](https://github.com/Jul
 
 ```julia
 using Pkg
-Pkg.develop(path = "/path/to/NeutrinoScalarNSI.jl")   # not registered yet
+Pkg.develop(path = "/path/to/NeutrinoScalarNSI.jl")   # not registered yet; Julia 1.11 or later
 using GLoBES, NeutrinoScalarNSI
 ```
 
