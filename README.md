@@ -21,4 +21,6 @@ probability(p, :μ, :e; E = 2.5, L = 1300, ρ = 2.848)
 
 It combines with the other blocks, e.g. `NewPhysics(ScalarNSI(:eτ), Decoherence())` with [NeutrinoDecoherence.jl](https://github.com/JuliaNeutrino/NeutrinoDecoherence.jl). Rates, χ² and fits in GLoBES.jl then use the new parameters like the standard ones.
 
-The probabilities agree with the C engine of the SNSI-decoherence DUNE study to 10⁻¹⁰ (`test/snsi_c_reference.txt`). Tests: `julia --project=. test/runtests.jl`.
+The probabilities agree with the C engine of the SNSI-decoherence DUNE study to 10⁻¹⁰ (`test/snsi_c_reference.txt`). The notebook [`notebooks/01_scalar_NSI.ipynb`](notebooks/01_scalar_NSI.ipynb) goes through the package: the dependence on the absolute masses, the equivalence to shifted standard parameters, the C-engine cross-check and the DUNE sensitivity to η_ee ([open in Colab](https://colab.research.google.com/github/JuliaNeutrino/NeutrinoScalarNSI.jl/blob/main/notebooks/01_scalar_NSI.ipynb); choose **Runtime → Change runtime type → Julia** first).
+
+Tests: `julia --project=. test/runtests.jl`.
