@@ -1,6 +1,8 @@
 # NeutrinoScalarNSI.jl
 
-Scalar non-standard neutrino interactions for [GLoBES.jl](https://github.com/JuliaNeutrino/GLoBES.jl). A light scalar coupled to neutrinos and matter corrects the neutrino mass matrix, M → M + δM, rather than adding a potential like vector NSI. The effect therefore depends on the absolute neutrino masses and grows with the density, not with the energy.
+Scalar non-standard neutrino interactions for [GLoBES.jl](https://github.com/JuliaNeutrino/GLoBES.jl). A light scalar coupled to neutrinos and matter corrects the neutrino mass matrix, M → M + δM, rather than adding a potential like vector NSI. The effect therefore depends on the absolute neutrino masses, and it scales as 1/E like the vacuum term, whereas a matter potential matters more as the energy grows.
+
+Physically δM is proportional to the density of the matter the neutrinos cross. The package takes η as a fixed parameter, the value for the matter along the baseline, so give each experiment the η of its density. With one fixed η, scalar NSI are exactly standard oscillations with shifted mixing angles, phase and mass splittings, at every energy and density: they show up as a disagreement between experiments in different environments, not within one experiment.
 
 ```julia
 using Pkg
